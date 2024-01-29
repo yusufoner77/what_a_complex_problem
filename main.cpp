@@ -1,11 +1,14 @@
 #include <iostream>
 #include "complexnumber.hpp"
+#include "complexlist.hpp"
 using namespace std;
 
 
 int main() {
 ComplexNumber n1 = ComplexNumber(5.0, 7.0);
 ComplexNumber n2 = ComplexNumber(2.5, 3.1);
+ComplexNumber a1 = ComplexNumber(3.1, 6.7);
+ComplexNumber a2 = ComplexNumber(4.6, 9.5);
 
 ComplexNumber n3 = n1.addition(n2);
 n3.pretty_print();
@@ -33,5 +36,13 @@ cout << n10 << endl;
 
 float n11 = n1.imaginary_part();
 cout << n11 << endl;
+
+
+vector<ComplexNumber> numberList = {n1, n2, a1, a2};
+
+ComplexList list = ComplexList(numberList);
+
+ComplexNumber l1 = list.sum(numberList); 
+l1.pretty_print();
 
 }
